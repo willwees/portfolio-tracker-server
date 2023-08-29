@@ -1,4 +1,5 @@
 import app from './App'
+import * as process from 'process'
 
 const port = process.env.PORT || 3000
 
