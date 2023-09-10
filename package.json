@@ -4,10 +4,11 @@
   "description": "Portfolio Tracker Server",
   "main": "dist/index.js",
   "scripts": {
-    "start": "tsc && node dist/index.js",
+    "dev": "nodemon --legacy-watch --exec npx ts-node src/index.ts",
+    "build": "rimraf ./dist && tsc",
+    "start": "npm run build && node dist/index.js",
     "lint": "eslint . --ext .ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon --exec npx ts-node src/index.ts"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +29,7 @@
     "eslint-plugin-n": "^16.0.2",
     "eslint-plugin-promise": "^6.1.1",
     "nodemon": "^3.0.1",
+    "rimraf": "^5.0.1",
     "typescript": "^5.2.2"
   }
 }
